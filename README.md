@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+### Command Usage
+
+`ng new awesome-components --style=scss --skip-tests=true --routing`
+- AppName `awesome-components`
+- Style SCSS
+- Don't generate test
+- Generate Automaticly routing file
+
+`ng add @angular/material`
+- Add @angular/material at project with configuration : 
+- `Deep Purple/Amber` theme 
+- Angular Material typography styles
+- Include and enable animations
+
+
+
+
+
