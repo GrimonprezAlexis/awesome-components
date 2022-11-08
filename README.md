@@ -56,6 +56,17 @@ HeaderComponent (global header app), in CoreModule
 #### Ressources
 Background image: `https://s3.eu-west-1.amazonaws.com/course.oc-static.com/courses/7471281/blurred-bg.jpeg`
 
+#### Architecture
+core -> 
+
+#### Voc
+Les resolvers font partie du routing d'une application Angular. Quand un utilisateur navigue vers une route qui a besoin de récupérer des données, le resolver effectue la requête, et la navigation ne se termine que lorsque les données sont arrivées.
+
+- Un resolver est un outil de routing qui est appelé lorsqu'un utilisateur cherche à accéder à la route où il est placé.
+- Le resolver récupère des données avant d'afficher la route souhaitée via sa méthode  resolve() .
+- Cette méthode retourne les données sous forme soit d'Observable, soit de Promise, ou "en vrac".
+- Le resolver est enregistré au niveau de la configuration de routing, et est associé à une clé d'objet.
+- Le component cible de la route utilise ensuite l'Observable data de ActivatedRoute pour récupérer les données via cette même clé.
 
 
 
