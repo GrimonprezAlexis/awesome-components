@@ -53,6 +53,9 @@ SocialMediaModule will be first feature module (lazy-loaded)
 HeaderComponent (global header app), in CoreModule
 - ng g c core/components/header
 
+- ng g c shared/components/comments --export
+Le flag  --export  ajoute automatiquement CommentsComponent aux exports de SharedModule. Pratique, non ?
+
 #### Ressources
 Background image: `https://s3.eu-west-1.amazonaws.com/course.oc-static.com/courses/7471281/blurred-bg.jpeg`
 
