@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { CommentsComponent } from './components/comments/comments.component';
 import { MaterialModule } from './material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { TimeAgoPipe } from './pipes/timeago.pipe';
 
 @NgModule({
   declarations: [
-    CommentsComponent
+    CommentsComponent,
+    ShortenPipe,
+    TimeAgoPipe
   ],
   imports: [
     CommonModule,
@@ -16,7 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     CommentsComponent,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ShortenPipe,
+    TimeAgoPipe
   ]
 })
 export class SharedModule { }
