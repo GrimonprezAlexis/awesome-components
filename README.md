@@ -29,6 +29,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ### Documentation
 https://openclassrooms.com/fr/courses/7471281-perfectionnez-vous-sur-angular/7471288-preparez-les-fondations
 
+### Angular Usage
+- Lazy Loading Structure
+- Angular Material
+- Resolvers
+- Reusable components
+- Custom Pipes
+- Directives
+- Angular Animations 
+
 ### Command Usage To Init
 `ng new awesome-components --style=scss --skip-tests=true --routing`
 - AppName `awesome-components`
