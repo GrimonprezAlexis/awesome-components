@@ -68,8 +68,14 @@ Le flag  --export  ajoute automatiquement CommentsComponent aux exports de Share
 #### Ressources
 Background image: `https://s3.eu-west-1.amazonaws.com/course.oc-static.com/courses/7471281/blurred-bg.jpeg`
 
-#### Architecture
-core -> 
+#### Memo Animation
+- Utilisez `query` pour cibler les différents enfants de l'élément animé.
+- Déclenchez des animations en parallèle avec `group` , ou en série avec `sequence`.
+- Étalez des animations de liste avec `stagger`.
+- Déclenchez l'animation d'un élément enfant avec `animateChild`.
+- Rendez vos animations réutilisables avec `animation`, et utilisez-les avec `useAnimation`.
+- Ajoutez des paramètres à vos animations avec la string interpolation, et passez des arguments pour ces paramètres via un objet de configuration passé à `useAnimation`.
+
 
 #### Voc
 Les resolvers font partie du routing d'une application Angular. Quand un utilisateur navigue vers une route qui a besoin de récupérer des données, le resolver effectue la requête, et la navigation ne se termine que lorsque les données sont arrivées.
