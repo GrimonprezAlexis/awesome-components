@@ -36,7 +36,7 @@ https://openclassrooms.com/fr/courses/7471281-perfectionnez-vous-sur-angular/747
 - Reusable components
 - Custom Pipes
 - Directives
-- Angular Animations 
+- Angular Animations
 
 ### Command Usage To Init
 `ng new awesome-components --style=scss --skip-tests=true --routing`
@@ -65,6 +65,25 @@ HeaderComponent (global header app), in CoreModule
 - ng g c shared/components/comments --export
 Le flag  --export  ajoute automatiquement CommentsComponent aux exports de SharedModule. Pratique, non ?
 
+#### Structure
+core-module content global elements (header, comments, ...) = `src > app > core`
+- components ex: header
+- models
+
+feature-module content features (form, list, ...) = `src > app > feature-module-name`
+- components
+- models
+- resolvers
+- services
+
+shared-module content shared = `src > app > shared`
+- animations
+- components
+- directives
+- pipes
+- modules ex: material
+
+
 #### Ressources
 Background image: `https://s3.eu-west-1.amazonaws.com/course.oc-static.com/courses/7471281/blurred-bg.jpeg`
 
@@ -76,7 +95,6 @@ Background image: `https://s3.eu-west-1.amazonaws.com/course.oc-static.com/cours
 - Rendez vos animations réutilisables avec `animation`, et utilisez-les avec `useAnimation`.
 - Ajoutez des paramètres à vos animations avec la string interpolation, et passez des arguments pour ces paramètres via un objet de configuration passé à `useAnimation`.
 
-
 #### Voc
 Les resolvers font partie du routing d'une application Angular. Quand un utilisateur navigue vers une route qui a besoin de récupérer des données, le resolver effectue la requête, et la navigation ne se termine que lorsque les données sont arrivées.
 
@@ -85,6 +103,37 @@ Les resolvers font partie du routing d'une application Angular. Quand un utilisa
 - Cette méthode retourne les données sous forme soit d'Observable, soit de Promise, ou "en vrac".
 - Le resolver est enregistré au niveau de la configuration de routing, et est associé à une clé d'objet.
 - Le component cible de la route utilise ensuite l'Observable data de ActivatedRoute pour récupérer les données via cette même clé.
+
+### MEMO - Create New Lazy Features Module
+- https://openclassrooms.com/fr/courses/7471281-perfectionnez-vous-sur-angular/7718026-preparez-le-module
+Un nouveau feature module ComplexFormModule ;
+il doit être lazy-loaded ;
+il n'aura qu'une seule route et un seul component : `ComplexFormComponent` ;
+il faut pouvoir y accéder par un lien dans le header ;
+ce nouveau module aura besoin de deux nouveaux components Material : `MatCheckbox` et `MatRadio` ;
+
+1 - Create new module 
+> `ng g m complex-form --routing`
+2 - Create new `path` in `AppRoutingModule` for lazy loading 
+> `{ path: 'complex-form', loadChildren: () => import('./complex-form/complex-form.module').then(m => m.ComplexFormModule) },`
+3 - Create new link in `Header`
+> <li><a routerLink="/complex-form">Complex Form</a></li>
+4 - Create new component 
+> `ng g c complex-form/components/complex-form`
+5 - Assign component to the empty route of `ComplexFormModule` in `ComplexFormRoutingModule`
+> `const routes: Routes = [
+  { path: '', component: ComplexFormComponent }
+];`
+6 - Import `SharedModule` in `ComplexFormModule` to use export shared module
+7 - Add service in `ComplexFormModule` providers
+
+
+### Tricks Emmet
+`mat-card.main-form`
+`mat-card.form-card*5>mat-card-title`
+
+
+
 
 
 
