@@ -23,9 +23,15 @@ import { Comment } from 'src/app/core/models/comment.model';
         animate('100ms ease-in-out')
       ]),
       transition('active => default', [
+        animate('200ms')
+      ]),
+      transition('deleting => *', [
         animate('500ms ease-in-out')
       ]),
-      transition('void => *', [
+      transition('* => deleting', [
+        animate('2000ms ease-out')
+      ]),
+      transition(':enter', [
           style({
               transform: 'translateX(-100%)',
               opacity: 0,
